@@ -2,10 +2,10 @@
 
 void GetMenu()
 {
-    Console.WriteLine($"Создать контакт в телефонной книге");
-    Console.WriteLine($"Удалить контакт из телефонной книги");
-    Console.WriteLine($"Удалить все контакты ");
-    Console.WriteLine($"Показать все контакты");
+    Console.WriteLine($"1) Создать контакт в телефонной книге");
+    Console.WriteLine($"2)Удалить контакт из телефонной книги");
+    Console.WriteLine($"3)Удалить все контакты ");
+    Console.WriteLine($"4)Показать все контакты");
 }
 void Menu()
 {
@@ -25,10 +25,12 @@ void Menu()
             Console.WriteLine($"Введите номер");
             string namber = Console.ReadLine();
             Contact contact = new Contact(namber, name, surname);
+            Console.WriteLine();
             phone.SetAContact(contact);
         }
         else if (menu == 2)
         {
+            Console.WriteLine();
             Console.WriteLine($"Введите номер");
             string namber = Console.ReadLine();
             phone.DeleteContact(namber);

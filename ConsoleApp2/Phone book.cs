@@ -16,16 +16,20 @@ namespace ConsoleApp2
         }
         public void DeleteContact(string number)
         {
+
+  
             foreach (Contact contact in contacts)
             {
                 if (contact.GetNumber() == number)
                 {
                     contacts.Remove(contact);
+                    return;
                 }
                 else
                 {
                     Console.WriteLine($"нет такого номера");
-                } 
+                    Console.WriteLine();
+                }
             }
         }
         public void ViewAllContacts()
@@ -34,6 +38,7 @@ namespace ConsoleApp2
             {
                 Console.WriteLine();
                 Console.WriteLine($"список контактов пуст");
+                Console.WriteLine();
             }
             else foreach(Contact contact in contacts)
             {
@@ -42,7 +47,7 @@ namespace ConsoleApp2
         }
         public void DeleteOllContact()
         {
-            contacts = null;
+            contacts = new List<Contact>();
             Console.WriteLine();
             Console.WriteLine($"Все контакты удалены");
             Console.WriteLine();
